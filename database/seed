@@ -1,0 +1,28 @@
+<?php
+// This file contains connection and seed queries to be used in the DB
+
+// This instance creates a connection with the DB
+$connection = new PDO(
+    'mysql:host=localhost;dbname=php-framework', // driver, machine name, database name
+    'amaujipe', // database username
+    ''
+);
+
+
+// Here come the different queries to interact with our DB
+
+// Deleting DB table 'users' if exists
+$connection->query('DROP TABLE IF EXISTS users');
+
+// Creating the table users
+$connection->query('
+    CREATE TABLE users (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255)
+    )
+');
+
+// Inserting seed data into the table to test our framework
+$connection->query('INSERT INTO users (name) VALUES ("Andres Jimenez")');
+$connection->query('INSERT INTO users (name) VALUES ("Sara Jimenez")');
+$connection->query('INSERT INTO users (name) VALUES ("Sofia Jimenez")');
