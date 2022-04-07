@@ -1,21 +1,18 @@
-<!-- This is the HTML structure that will show us
-the information of each user on the web -->
-
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP Framework</title>
-</head>
-<body>
+<!-- The 'ob_start()' function creates a buffer with the information
+ next to it. More about this function in the next link
+ https://www.php.net/manual/es/function.ob-start.php -->
+<?php ob_start(); ?>
 <h1>Usuario</h1>
 <p>
     <strong>ID</strong> <?php echo $user->id; ?>
     <br />
     <?php echo $user->name; ?>
 </p>
-</body>
-</html>
+<!-- With ob_get_clean (https://www.php.net/manual/es/function.ob-get-clean)
+we get the bufered info and stored it in the '$content' which
+will be sent to the same variable in the template file
+(layout/app.html.php)-->
+<?php $content = ob_get_clean(); ?>
+
+<!-- Importing the 'template' view in layout/app.html.php-->
+<?php require __DIR__ . '/../layout/app.html.php'; ?>
