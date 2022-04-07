@@ -8,7 +8,7 @@
         <tr>
             <td><?php echo $user->id; ?></td>
             <td><?php echo $user->name; ?></td>
-            <td><a href="/show.php?id=<?php echo $user->id
+            <td><a href="/show?id=<?php echo $user->id
                 ?>">Ver</a></td>
         </tr>
     <?php endforeach; ?>
