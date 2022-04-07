@@ -12,4 +12,5 @@ $connection = new PDO(
 $query = $connection->query('SELECT id, name FROM users');
 $users = $query->fetchAll(PDO::FETCH_OBJ);
 
+// Importing the view
 require 'views/users/index.html.php';
