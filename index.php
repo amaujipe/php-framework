@@ -1,16 +1,10 @@
 <?php
 
-// This instance creates a connection with the DB
-$connection = new PDO(
-    'mysql:host=localhost;dbname=php-framework', // driver, machine name, database name
-    'amaujipe', // database username
-    ''
-);
+// Importing 'users' model
+require 'app/user_model.php';
 
-// We fetch all the information from the 'users' table
-// and store it in the 'users' variable as an array of objects
-$query = $connection->query('SELECT id, name FROM users');
-$users = $query->fetchAll(PDO::FETCH_OBJ);
+// Using the 'all()' function defined in the 'users' model
+$users = all();
 
-// Importing the view
+// Importing the 'users' view
 require 'views/users/index.html.php';

@@ -1,17 +1,10 @@
 <?php
 
-// This instance creates a connection with the DB
-$connection = new PDO(
-    'mysql:host=localhost;dbname=php-framework', // driver, machine name, database name
-    'amaujipe', // database username
-    ''
-);
+// Importing 'users' model
+require 'app/user_model.php';
 
-// We fetch the information from a single user in the 'users' table
-// this info is obtained by the id into the URL through GET Method
-// and then stored in the 'users' variable as an array of object
-$query = $connection->query('SELECT id, name FROM users WHERE id =' . $_GET['id']);
-$user = $query->fetch(PDO::FETCH_OBJ);
+// Using the 'find()' function defined in the 'users' model
+$user = find($_GET['id']);
 
-// Importing the view
+// Importing the 'show' view
 require 'views/users/show.html.php';
