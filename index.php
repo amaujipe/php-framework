@@ -12,8 +12,6 @@ $connection = new PDO(
 $query = $connection->query('SELECT id, name FROM users');
 $users = $query->fetchAll(PDO::FETCH_OBJ);
 
-echo '<pre>';
-var_dump($users);
 ?>
 
 <!-- We create the HTML structure that will show us
@@ -26,7 +24,7 @@ the information of the 'users' table on the web -->
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP Frameworl</title>
+    <title>PHP Framework</title>
 </head>
 <body>
     <h1>Usuarios</h1>
@@ -39,7 +37,8 @@ the information of the 'users' table on the web -->
                 <tr>
                     <td><?php echo $user->id; ?></td>
                     <td><?php echo $user->name; ?></td>
-                    <td><a href="">Ver</a></td>
+                    <td><a href="/show.php?id=<?php echo $user->id
+                        ?>">Ver</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
