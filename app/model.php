@@ -5,6 +5,6 @@ function connection() {
     return new PDO(
         'mysql:host=localhost;dbname=php-framework', // driver, machine name, database name
         'amaujipe', // database username
-        ''
+        ''  // database user password
     );
 }
