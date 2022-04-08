@@ -1,5 +1,9 @@
 <?php
 
+// Importing the model which will work with this controller, in this case,
+// the user model works with the user controller.
+use App\Models\User;
+
 // This function will return all we need to build the 'users/index' view.
 function index() {
 
@@ -10,7 +14,7 @@ function index() {
     // variable which will store the returned information by the 'all()'
     // function created in the users_model.php file.
     view('users/index', [
-        'users' => all()
+        'users' => User::all() // Imports all user's data through the User Model
     ]);
 
 }
@@ -25,7 +29,7 @@ function show($id) {
     // variable which will store the returned information by the 'find()'
     // function created in the users_model.php file.
     view('users/show', [
-        'user' => find($id)
+        'user' => User::find($id) // Imports user data through the User Model
     ]);
 
 }

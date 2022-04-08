@@ -9,7 +9,7 @@
         },
         "files": [
             "app/helpers.php",
-            "app/user_model.php",
+            "bootstrap/database.php",
             "app/user_controller.php"
         ]
     },
@@ -20,5 +20,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "illuminate/database": "10.x-dev"
+    }
 }
