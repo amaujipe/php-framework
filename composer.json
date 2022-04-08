@@ -9,7 +9,6 @@
         },
         "files": [
             "app/helpers.php",
-            "bootstrap/database.php",
             "app/user_controller.php"
         ]
     },
@@ -21,6 +20,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "illuminate/database": "10.x-dev"
+        "illuminate/database": "10.x-dev",
+        "vlucas/phpdotenv": "5.4.x-dev"
     }
 }

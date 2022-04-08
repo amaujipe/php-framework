@@ -1,10 +1,9 @@
 <?php
 
-// Importing the autoload.php file from composer where we are loading the
-// different files we are using in our app. With this, we are cleaning our
-// index file importing everything in one single line and giving that
-// responsibility to the composer autoload system.
-require __DIR__ . "/../vendor/autoload.php";
+// Importing the app.php file where we are importing the different files we
+// are using in our app. With this, we are cleaning our index file importing
+// everything in one single line.
+require __DIR__ . "/../bootstrap/app.php";
 
 // parse_url (https://www.php.net/manual/es/function.parse-url.php) analyze
 // the URL of the current page sent in the $_SERVER['REQUEST_URI'] variable
