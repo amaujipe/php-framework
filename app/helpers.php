@@ -1,6 +1,6 @@
 <?php
 
-// This function will print the different views on our website. For that, it
+// This function will print the different views in our website. For that, it
 // will receive the 'view' and the params of that view to be printed.
 function view($view, array $params = []) {
 
