@@ -14,6 +14,7 @@ To use this framework you need to follow the steps:
 3. During the development process, I use a database with a single table 
    called users, where default requests and responses were based on that 
    table. The queries to create that table are available in `/database/seed.`
+4. Update the `.env` variables values.
 
 The workflow in this framework is as follows:
 
