@@ -13,12 +13,12 @@ class UserController
 
         // Using the 'view()' function defined in the 'helpers.php' file.
         // We send the view ('users/index') we want to see, and the params to
-        // be used in the 'index.html.php' file to show the requested information.
+        // be used in the 'index.html.php' file, to show the requested information.
         // These params will take an important role, 'users' will be the name of the
         // variable which will store the returned information by the 'all()'
-        // function created in the users_model.php file.
+        // function taken from the class 'Model' in Eloquent.
         view('users/index', [
-            'users' => User::all() // Imports all user's data through the User Model
+            'users' => User::all()
         ]);
 
     }
@@ -31,9 +31,9 @@ class UserController
         // be used in the 'show.html.php' file to show the requested information.
         // These params will take an important role, 'user' will be the name of the
         // variable which will store the returned information by the 'find()'
-        // function created in the users_model.php file.
+        // function taken from the class 'Model' in Eloquent.
         view('users/show', [
-            'user' => User::find($id) // Imports user data through the User Model
+            'user' => User::find($id)
         ]);
 
     }
